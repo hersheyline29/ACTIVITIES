@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #C8E6C9; 
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #E8F5E9;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h2, h3 {
+            text-align: center;
+            color: #1B5E20; 
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-weight: 400;
+            color: #388E3C; 
+            font-weight: bold;
+        }
+
+        p { 
+                    text-align: center;
+            color: #1B5E20;
+             }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .form-row label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #1B5E20;
+            font-weight: bold;
+        }
+
+        .form-row input, .form-row select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #388E3C;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+            background-color: #ffffff; 
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-row input:focus, .form-row select:focus {
+            border-color: #1B5E20; /* Black */
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+            outline: none;
+        }
+
+        .form-row.half {
+            width: 48%;
+        }
+
+        button {
+            background-color: #388E3C; 
+            color: #ffffff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2E7D32; 
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .form-row.half {
+                width: 100%;
+            }
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+      <center><h2>Hersheyline Nhadyn B. Dudas </h2>
+      <p>BSIT 4-1</p></center>
+        <h3>PERSONAL INFORMATION</h3>
+        <form id="registrationForm" action="Home.php" class="was-validated">
+            <div class="form-row">
+                <div class="half">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    <span class="error-message" id="firstNameError"></span>
+                </div>
+                <div class="half">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    <span class="error-message" id="lastNameError"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="half">
+                    <label for="birthday">Birthday</label>
+                    <input type="date" id="birthday" name="birthday" required>
+                </div>
+                <div class="half">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" placeholder="House.No,Barangay" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="half">
+                    <label for="gender">Sex</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select Sex</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="Not Specified">Not Specified</option>
+                    </select>
+                </div>
+                <div class="half">
+                    <input type="text" id="address" name="address" placeholder="City,Province" required>
+                </div>
+            </div>
+          <h3>STUDENT INFORMATION </h3>
+            <div class="form-row">
+                 <div class="half">
+                    <label for="studentNumber">Student Number</label>
+                    <input type="text" id="studentNumber" name="studentNumber" placeholder="Student Number" required>
+                </div>
+                <div class="half">
+                    <label for="college">College</label>
+                    <input type="text" id="college" name="college" placeholder="College" required>
+                </div>
+              </div>
+
+            <div class="form-row">
+                
+                 <div class="half">
+                    <label for="course">Course</label>
+                    <input type="text" id="course" name="course" placeholder="Course" required>
+            </div>
+</div>
+<h3>CONTACT INFORMATION</h3>
+            <div class="form-row">
+                <div class="half">
+                    <label for="MainPhone">Contact info.</label>
+                    <input type="tel" id="MainPhone" name="MainPhone" placeholder="Main Phone" pattern="[0-9]{11}" maxlength="11" required>
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+                <div class="half">
+                    <label for="Email">Email</label>
+                    <input type="email" id="Email" name="Email" placeholder="Email" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="half">
+                    <input type="tel" id="MainPhone" name="MainPhone" placeholder="Secondary Phone" pattern="[0-9]{11}" maxlength="11" required>
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+                <div class="half">
+                    <input type="email" id="Email" name="Email" placeholder="Secondary Email" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="half">
+                    <input type="tel" id="MainPhone" name="MainPhone" placeholder="Other Phone" pattern="[0-9]{11}" maxlength="11" required>
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+                <div class="half">
+                    <input type="email" id="Email" name="Email" placeholder="Primary Main Contact" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="half">
+                    <label for="registrationDate">Registration Date</label>
+                    <input type="date" id="registrationDate" name="registrationDate" required>
+                </div>
+                <div class="half">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="date" id="expiryDate" name="expiryDate" required>
+                </div>
+            </div>
+            <button>Register</button>
+            
+        </form>
+    </div>
+
+    <script>
+       document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    // Prevent the form from submitting
+    event.preventDefault();
+
+    // Clear previous error messages
+    clearErrors();
+
+    // Get form inputs
+    var firstName = document.getElementById("firstName").value.trim();
+    var lastName = document.getElementById("lastName").value.trim();
+    var phone = document.getElementById("MainPhone").value.trim();
+    var email = document.getElementById("Email").value.trim();
+
+    var isValid = true;
+
+    // Validate first name
+    if (!validateNotEmpty(firstName, "firstNameError", "First name is required.")) {
+        isValid = false;
+    }
+
+    // Validate last name
+    if (!validateNotEmpty(lastName, "lastNameError", "Last name is required.")) {
+        isValid = false;
+    }
+
+    // Validate phone number (11 digits)
+    if (!validatePhone(phone)) {
+        isValid = false;
+    }
+
+    // Validate email address
+    if (!validateEmail(email)) {
+        isValid = false;
+    }
+
+    // If the form is valid, allow submission
+    if (isValid) {
+        alert("Form submitted successfully!");
+        document.getElementById("registrationForm").submit();
+    }
+});
+
+// Function to clear all error messages
+function clearErrors() {
+    var errorMessages = document.querySelectorAll(".error-message");
+    errorMessages.forEach(function(error) {
+        error.textContent = "";
+    });
+}
+
+// Function to validate if a field is not empty
+function validateNotEmpty(value, errorId, errorMessage) {
+    if (value === "") {
+        document.getElementById(errorId).textContent = errorMessage;
+        return false;
+    }
+    return true;
+}
+
+// Function to validate phone number (11 digits)
+function validatePhone(phone) {
+    var phonePattern = /^[0-9]{11}$/;
+    if (!phonePattern.test(phone)) {
+        document.getElementById("phoneError").textContent = "Phone number must be 11 digits.";
+        return false;
+    }
+    return true;
+}
+
+// Function to validate email format
+function validateEmail(email) {
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+        document.getElementById("emailError").textContent = "Please enter a valid email.";
+        return false;
+    }
+    return true;
+}
+
+    </script>
+</body>
